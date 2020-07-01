@@ -1,0 +1,13 @@
+pipeline {
+    agent any
+    stages {
+        stage('Seed Job') {
+            when {
+                branch "master"
+            }
+            steps {
+                jobDsl targets: 'seed/Jenkins.jobdsl', removedJobAction: 'DELETE'
+            }
+        }
+    }
+}
