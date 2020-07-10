@@ -6,6 +6,7 @@ pipeline {
                 branch "master"
             }
             steps {
+                sh 'echo I am Seed Job. Now I will parse job.dsl and create all your jobs'
                 jobDsl targets: 'seed/Jenkins.jobdsl', removedJobAction: 'DELETE'
             }
         }
