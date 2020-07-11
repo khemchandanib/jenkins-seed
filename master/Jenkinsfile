@@ -1,12 +1,13 @@
 pipeline {
-    agent {
-          label 'helm'
+  agent {
+    label 'jenkins-helm'
+  }
+  stages {
+    stage('Check file') {
+      steps {
+        sh 'echo Test Job'
+        sh 'helm list'
       }
-    stages {
-        stage('Check file') {
-            steps {
-                sh 'echo Test Job edit 1'
-            }
-        }
     }
+  }
 }
