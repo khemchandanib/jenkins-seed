@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+          label 'helm'
+      }
     stages {
         stage('Check file') {
             steps {
